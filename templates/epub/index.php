@@ -1,7 +1,6 @@
 <?php
 
   //error_reporting(0);
-  set_include_path(get_include_path() . PATH_SEPARATOR . dirname(__FILE__) . '/pear_ext');
   $anthEpubDir = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'anthologize' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'epub' . DIRECTORY_SEPARATOR;
   require_once($anthEpubDir  . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'class-epub-builder.php');
   include_once(ANTHOLOGIZE_TEIDOM_PATH);
@@ -30,6 +29,7 @@ $ops['outputParams'] = $_SESSION['outputParams'];
     die ('ePub export requires XSL support');
   }
 
+  set_include_path( dirname( __FILE__ ) . '/pear_ext' );
   require_once('Archive.php');
 
 
